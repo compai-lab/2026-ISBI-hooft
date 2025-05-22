@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or models, please cite the following:"
+title: "Location Context Segmentation Models"
+authors:
+  - family-names: Hooft
+    given-names: Donna
+    affiliation: Technical University of Munich
+     # optional
+date-released: 2025-05-22
+version: "1.0"
+doi: 10.5281/zenodo.15489936  # Replace with your actual Zenodo DOI once it's published
+repository-code: 

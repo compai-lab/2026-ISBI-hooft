@@ -1,0 +1,7 @@
+monai==1.3.0
+nibabel
+numpy
+tqdm
+matplotlib
+torch>=1.12
+SimpleITK
