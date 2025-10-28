@@ -8,6 +8,7 @@ Donnate Bridget Hooft*, Stefan M. Fischer*, Cosmin Bercea, Jan C. Peeken, Julia 
 Technical University of Munich, Helmholtz Munich, and Munich Center of Machine Learning (MCML)  
 
 [Conference/Journal details to be added]  
+A full citation (BibTeX/APA) is provided in the `CITATION.cff` file.
 
 ---
 
