@@ -1,27 +1,55 @@
-#### Acknowledgements
-Herein are the source codes and training scripts for 3D medical image segmentation models with location context, as presented in:
+## Acknowledgements
 
-<!-- “Spatial Context within 3D Patch-based Medical Image Segmentation: Integrating Global and Relative Positional Priors”
-Donnate Bridget Hooft, Stefan Fischer, et al.
-Presented at [insert conference/journal if known]
-(A citation in BibTeX/APA will be provided in the CITATION.cff file.) -->
+This repository provides the source code and training scripts for 3D medical image segmentation models that incorporate **location context**, as described in:
 
-This repository contains implementations for several architectures incorporating spatial priors:
+**“LocBAM: Advancing 3D Patch-Based Image Segmentation by Integrating Location Context”**  
+Donnate Bridget Hooft*, Stefan M. Fischer*, Cosmin Bercea, Jan C. Peeken, Julia A. Schnabel  
+(*Shared first authorship*)  
+Technical University of Munich, Helmholtz Munich, and Munich Center of Machine Learning (MCML)  
 
-Coordinate-based embedding models (e.g., CoordConv, UNETR with positional embeddings)
+[Conference/Journal details to be added]  
 
-Body Part Regression integration
+---
 
-LocBAM: Our novel 1D attention-based module to inject axis-wise anatomical awareness into convolutional encoders.
+## Repository Overview
 
-Originality & Framework
-All code was written from scratch using the MONAI framework and standard PyTorch. No proprietary or third-party segmentation code was reused beyond standard open-source libraries.
+This repository implements several strategies for integrating spatial and anatomical priors into patch-based 3D medical image segmentation models:
 
-# Inspiration
-LocBAM module was conceptually inspired by the HANet architecture for height-aware attention in 2D scene parsing:
+- **Coordinate-based models**
+  - CoordConv layers for explicit coordinate encoding.
+  - UNETR-style positional embeddings for global spatial representation.
 
-HANet GitHub: https://github.com/lhc1224/HANet
+- **Body Part Regression (BPR)**
+  - Integration of normalized anatomical scores (pelvis–head range) as spatial priors for CT-based segmentation.
+
+- **LocBAM (Location-Based Attention Module)**
+  - A lightweight, axis-wise attention mechanism for incorporating anatomical awareness into convolutional encoders.
+  - Extends the hierarchical attention concept from HANet to 3D volumetric data.
+  - Provides robust, memory-efficient training under limited patch-to-volume coverage (PtVC).
+
+---
+
+## Framework and Implementation
+
+- Implemented entirely with **PyTorch** and **MONAI**.
+- All code was written from scratch; no proprietary or third-party segmentation components were reused.
+- Training and evaluation follow the **nnU-Net** configuration for standardized benchmarking.
+- Compatible with **BTCV**, **AMOS22**, and **KiTS23** datasets.
+
+---
+
+## Inspiration
+
+The LocBAM architecture was conceptually inspired by the height-aware attention mechanism introduced in:
+
+HANet: *Height-Aware Attention Networks for Semantic Segmentation*  
+GitHub: [https://github.com/lhc1224/HANet](https://github.com/lhc1224/HANet)  
 License: Creative Commons BY-NC 4.0
 
-# License
-This repository is licensed under the Apache License 2.0, permitting free use, modification, and distribution with attribution. See the LICENSE file for full terms.
+---
+
+## License
+
+This project is released under the **Apache License 2.0**, allowing free use, modification, and distribution with attribution.  
+See the `LICENSE` file for details.
+
